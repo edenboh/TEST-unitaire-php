@@ -1,0 +1,47 @@
+
+{% block title %}L'ELITE!{% endblock %}
+
+
+{% block body %}
+
+    <h1> L'ELITE✅</h1>
+
+    <table>
+        <thead>
+        <tr>
+            <th>id</th>
+            <th>Prénom</th>
+            <th>Nom</th>
+            <th>Âge</th>
+            <th>Les T-shirts</th>
+        </tr>
+        </thead>
+        <tbody>
+        {% for uneCopine in tableau %}
+            <tr>
+                <td>{{ uneCopine.id }}</td>
+                <td>{{ uneCopine.firstName }}</td>
+                <td>{{ uneCopine.lastName }}</td>
+                <td>{{ uneCopine.age }}</td>
+                <td>
+                    <table>
+                        <tr>
+                            <td>T-shirts :</td>
+                            <td>
+                                <ul>
+                                    {% for unTshirt in uneCopine.tshirts %}
+                                        <li>{{ unTshirt }}</li>
+                                    {% endfor %}
+                                </ul>
+                            </td>
+                        </tr>
+                    </table>
+                </td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+
+{% endblock %}
+
